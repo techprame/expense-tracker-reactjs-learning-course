@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ExpenseItem from "./components/ExpenseItem";
+import ExpenseDate from "./components/ExpenseDate.jsx";
 
 function App() {
   // let expenseDate = new Date();
@@ -36,8 +37,8 @@ function App() {
   return (
     <>
       <div>
-        <h2 className="text-xl text-center p-4 bg-amber-400">
-          Let's get started!
+        <h2 className="text-2xl text-center p-4 bg-amber-400 font-bold underline">
+          Expense Tracker ReactJS Learning Course - by @techPrame
         </h2>
       </div>
       <ExpenseItem
@@ -63,6 +64,12 @@ function App() {
         date={expenses[3].date}
         title={expenses[3].title}
         amount={expenses[3].amount}
+      />
+      <ExpenseItem
+        _id="Custom ID"
+        date={new Date(Math.floor(Math.random() * Date.now()))}
+        title="Custom Title"
+        amount="Custom Amount"
       />
     </>
   );
