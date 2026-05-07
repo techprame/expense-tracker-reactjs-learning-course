@@ -13,7 +13,7 @@ function NewExpense({ newExpenses }) {
 
   return (
     <>
-      <div className="p-4 bg-orange-400 my-8 mx-auto w-80rem max-w-[95%] rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.25)]">
+      <div className="p-4 bg-orange-400 my-8 mx-auto w-[70rem] max-w-[95%] rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.25)]">
         <ExpenseForm onAddExpense={addExpenseHandler} />
       </div>
     </>

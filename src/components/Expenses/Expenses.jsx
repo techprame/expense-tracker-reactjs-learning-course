@@ -5,7 +5,7 @@ import Card from "../UI/Card";
 const Expenses = ({ item }) => {
   return (
     <>
-      <Card className="p-4 bg-orange-400 my-8 mx-auto w-80rem max-w-[95%]">
+      <Card className="p-4 bg-orange-400 my-8 mx-auto w-[70rem] max-w-[95%]">
         {item.map((expenses) => (
           <ExpenseItem
             _id={expenses._id}
