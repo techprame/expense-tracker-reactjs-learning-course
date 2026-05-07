@@ -8,6 +8,7 @@ const Expenses = ({ item }) => {
       <Card className="p-4 bg-orange-400 my-8 mx-auto w-[70rem] max-w-[95%]">
         {item.map((expenses) => (
           <ExpenseItem
+            key={expenses._id}
             _id={expenses._id}
             date={expenses.date}
             title={expenses.title}

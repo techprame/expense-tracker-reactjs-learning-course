@@ -1,40 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 
-let DUMMY_EXPENSE = [
-  {
-    _id: 1,
-    title: "Car Fuel",
-    amount: 200,
-    date: new Date(Math.floor(Math.random() * Date.now())),
-  },
-  {
-    _id: 2,
-    title: "Car Insurance",
-    amount: 500,
-    date: new Date(Math.floor(Math.random() * Date.now())),
-  },
-  {
-    _id: 3,
-    title: "Car Maintenance",
-    amount: 1000,
-    date: new Date(Math.floor(Math.random() * Date.now())),
-  },
-  {
-    _id: 4,
-    title: "Car Repair",
-    amount: 1500,
-    date: new Date(Math.floor(Math.random() * Date.now())),
-  },
-];
+let expenseDatabase = [];
 
 const App = () => {
   // let expenseDate = new Date();
   // let expenseTitle = "Car Fuel";
   // let expenseAmount = "200";
 
-  const [expenses, setExpenses] = useState(DUMMY_EXPENSE);
+  const [expenses, setExpenses] = useState(expenseDatabase);
+
+  useEffect(() => {
+    fetch("https://apis.jsons.live/cuwbo/expensedata")
+      .then((response) => response.json())
+      .then((data) => {
+        setExpenses(data.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching expense data:", error);
+      });
+  }, []);
 
   const newExpensesHandler = (newExpenseEntry) => {
     // DUMMY_EXPENSE.push(finalExpenseData);
