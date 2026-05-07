@@ -5,8 +5,17 @@ import Card from "../UI/Card";
 const Expenses = ({ item }) => {
   return (
     <>
-      <Card className="p-4 bg-orange-400 my-8 mx-auto w-[80rem] max-w-[95%]">
-        <ExpenseItem
+      <Card className="p-4 bg-orange-400 my-8 mx-auto w-80rem max-w-[95%]">
+        {item.map((expenses) => (
+          <ExpenseItem
+            _id={expenses._id}
+            date={expenses.date}
+            title={expenses.title}
+            amount={expenses.amount}
+          />
+        ))}
+
+        {/* <ExpenseItem
           _id={item[0]._id}
           date={item[0].date}
           title={item[0].title}
@@ -35,7 +44,7 @@ const Expenses = ({ item }) => {
           date={new Date(Math.floor(Math.random() * Date.now()))}
           title="Custom Title"
           amount="Custom Amount"
-        />
+        /> */}
       </Card>
     </>
   );

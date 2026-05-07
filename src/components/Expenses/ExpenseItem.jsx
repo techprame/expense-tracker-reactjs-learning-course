@@ -4,7 +4,7 @@ import Card from "../UI/Card";
 
 const ExpenseItem = ({ _id, date, title, amount }) => {
   const [expense, setExpense] = useState(title);
-  const [newExpense, setNewExpense] = useState(null);
+  const [newExpense, setNewExpense] = useState("");
 
   return (
     <>
@@ -27,7 +27,7 @@ const ExpenseItem = ({ _id, date, title, amount }) => {
           className="text-black bg-white focus:outline-none focus:ring-2 focus:ring-red-300 font-bold py-2 px-4 m-4 rounded border-2"
           onChange={(e) => setNewExpense(e.target.value)}
           type="text"
-          placeholder="Type your expense..."
+          placeholder="Edit your expense..."
           value={newExpense}
           name=""
           id="ExpenseTitleChange"
@@ -35,9 +35,9 @@ const ExpenseItem = ({ _id, date, title, amount }) => {
         <button
           htmlFor="ExpenseTitleChange"
           onClick={(e) => setExpense(newExpense)}
-          className="text-white bg-red-500 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-300 font-bold py-2 px-4 m-4 rounded"
+          className="text-white bg-red-500 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-300 font-bold py-2 px-4 m-4 rounded cursor-pointer"
         >
-          Change Expense
+          Edit Expense
         </button>
       </Card>
     </>
