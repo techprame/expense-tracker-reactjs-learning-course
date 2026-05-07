@@ -1,8 +1,7 @@
-import { useState } from "react";
-import ExpenseItem from "./components/ExpenseItem";
-import ExpenseDate from "./components/ExpenseDate.jsx";
+import React, { useState } from "react";
+import Expenses from "./components/Expenses/Expenses";
 
-function App() {
+const App = () => {
   // let expenseDate = new Date();
   // let expenseTitle = "Car Fuel";
   // let expenseAmount = "200";
@@ -40,39 +39,10 @@ function App() {
         <h2 className="text-2xl text-center p-4 bg-amber-400 font-bold underline">
           Expense Tracker ReactJS Learning Course - by @techPrame
         </h2>
+        <Expenses item={expenses} />
       </div>
-      <ExpenseItem
-        _id={expenses[0]._id}
-        date={expenses[0].date}
-        title={expenses[0].title}
-        amount={expenses[0].amount}
-      />
-      <ExpenseItem
-        _id={expenses[1]._id}
-        date={expenses[1].date}
-        title={expenses[1].title}
-        amount={expenses[1].amount}
-      />
-      <ExpenseItem
-        _id={expenses[2]._id}
-        date={expenses[2].date}
-        title={expenses[2].title}
-        amount={expenses[3].amount}
-      />
-      <ExpenseItem
-        _id={expenses[3]._id}
-        date={expenses[3].date}
-        title={expenses[3].title}
-        amount={expenses[3].amount}
-      />
-      <ExpenseItem
-        _id="Custom ID"
-        date={new Date(Math.floor(Math.random() * Date.now()))}
-        title="Custom Title"
-        amount="Custom Amount"
-      />
     </>
   );
-}
+};
 
 export default App;
